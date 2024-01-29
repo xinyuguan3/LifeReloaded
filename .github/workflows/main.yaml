@@ -13,6 +13,11 @@ jobs:
     #   run: |
     #     cd
 
+    - name:Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
     - name: Create a requirements file
       run: |
         pip freeze > requirements.txt
@@ -20,6 +25,10 @@ jobs:
     - name: Install Dependencies
       run: |
         pip install -r requirements.txt
+
+    - name: Run Tests
+      run: |
+        python -m pytest -v
 
     - name: run the app
       run: |
