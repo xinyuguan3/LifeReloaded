@@ -9,9 +9,9 @@ jobs:
  
     steps:
 
-    - name: Install Dependencies
+    - name: find requirements.txt
       run: |
-        cd ../..
+        find . -regex '.*requirements.txt$'
         
     - name: Install Dependencies
       run: |
