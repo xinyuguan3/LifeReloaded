@@ -154,7 +154,7 @@ class Game {
 
     async initPlayer() {
         try {
-            await ApiService.fetchJSON('/init/', {
+            await ApiService.fetchJSON('/LifeReloaded/init/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -191,7 +191,7 @@ class Game {
         DomUtils.disableButton('#eventButton');
         await this.initPlayer();
         try {
-            await ApiService.fetchStream('/begin/', {
+            await ApiService.fetchStream('/LifeReloaded/begin/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -207,7 +207,7 @@ class Game {
 
     async getEvent() {
         try {
-            await ApiService.fetchStream('/event/', {
+            await ApiService.fetchStream('/LifeReloaded/event/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -221,7 +221,7 @@ class Game {
 
     async getEnding() {
         try {
-            await ApiService.fetchStream('/ending/', {
+            await ApiService.fetchStream('/LifeReloaded/ending/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -239,7 +239,7 @@ class Game {
         DomUtils.disableButtonsInContainer('#option-container');
 
         try {
-            await ApiService.fetchStream('/evaluation/', {
+            await ApiService.fetchStream('/LifeReloaded/evaluation/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -282,7 +282,7 @@ class Game {
 
     async checkIfAlive() {
         try {
-            const data = await ApiService.fetchJSON('/is_alive/', {
+            const data = await ApiService.fetchJSON('/LifeReloaded/is_alive/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -297,7 +297,7 @@ class Game {
     }
 
     getParsedEvent() {
-        ApiService.fetchJSON('/parsed_event/', {
+        ApiService.fetchJSON('/LifeReloaded/parsed_event/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -321,7 +321,7 @@ class Game {
 
     async updatePlayerData() {
         try {
-            const data = await ApiService.fetchJSON('/get_person/', {
+            const data = await ApiService.fetchJSON('/LifeReloaded/get_person/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -391,7 +391,7 @@ window.onload = function() {
 }
 
 async function checkAndUpdateCSS() {
-    const url = '/static/game.css'
+    const url = '/LifeReloaded/static/game.css'
     const cssLink = document.querySelector(`link[href="${url}"]`);
     if (!cssLink) return;
 
