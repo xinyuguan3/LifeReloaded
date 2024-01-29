@@ -23,7 +23,7 @@ jobs:
         
     - name: Install Dependencies
       run: |
-        pip install -r LifeReloaded/requirements.txt
+        pip install -r /LifeReloaded/requirements.txt
 
     - name: run the app
       run: |
