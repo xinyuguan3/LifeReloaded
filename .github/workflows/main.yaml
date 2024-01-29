@@ -13,9 +13,9 @@ jobs:
       run: |
         cd
 
-    - name: Find Requirements.txt
+    - name: See Folder Structure
       run: |
-        find . -regex '.*requirements.txt$'
+        tree
         
     - name: Install Dependencies
       run: |
