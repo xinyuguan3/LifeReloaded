@@ -29,31 +29,31 @@ app.add_middleware(
     allow_methods=['*'],
     allow_headers=['*'],
 )
-app.mount('/static',
+app.mount('/LifeReloaded/static',
           StaticFiles(directory='static'),
           name='static')
 
 
-@app.get('/', response_class=HTMLResponse)
+@app.get('/LifeReloaded/', response_class=HTMLResponse)
 async def game_root():
     return templates.TemplateResponse('index.html', {'request': {}})
 
 
-@app.post('/init/')
+@app.post('/LifeReloaded/init/')
 async def game_init(item: Item):
     session_id = item.session_id
     user_data = moderator.init_player(session_id)
     return user_data
 
 
-@app.post('/begin/')
+@app.post('/LifeReloaded/begin/')
 async def game_begin(item: Item):
     session_id = item.session_id
     return StreamingResponse(moderator.generate_background(session_id),
                              media_type='text/plain')
 
 
-@app.post('/event/')
+@app.post('/LifeReloaded/event/')
 async def game_event(item: Item):
     session_id = item.session_id
     assert session_id is not None
@@ -61,7 +61,7 @@ async def game_event(item: Item):
                              media_type='text/plain')
 
 
-@app.post('/parsed_event/')
+@app.post('/LifeReloaded/parsed_event/')
 async def parsed_event(item: Item):
     session_id = item.session_id
     assert session_id is not None
@@ -70,7 +70,7 @@ async def parsed_event(item: Item):
     return data
 
 
-@app.post('/evaluation/')
+@app.post('/LifeReloaded/evaluation/')
 async def evaluation(item: Item):
     session_id = item.session_id
     selection = item.selection
@@ -80,14 +80,14 @@ async def evaluation(item: Item):
                              media_type='text/plain')
 
 
-@app.post('/is_alive/')
+@app.post('/LifeReloaded/is_alive/')
 async def is_alive(item: Item):
     session_id = item.session_id
     assert session_id is not None
     return moderator.is_alive(session_id)
 
 
-@app.post('/ending/')
+@app.post('/LifeReloaded/ending/')
 async def generate_ending(item: Item):
     session_id = item.session_id
     assert session_id is not None
@@ -95,7 +95,7 @@ async def generate_ending(item: Item):
                              media_type='text/plain')
 
 
-@app.post('/get_person/')
+@app.post('/LifeReloaded/get_person/')
 async def get_person(item: Item):
     session_id = item.session_id
     assert session_id is not None
