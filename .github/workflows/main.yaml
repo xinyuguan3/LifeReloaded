@@ -13,13 +13,13 @@ jobs:
     #   run: |
     #     cd
 
-    # - name: See Folder Structure
-    #   run: |
-    #     tree
+    - name: Create a requirements file
+      run: |
+        pip freeze > requirements.txt
         
     - name: Install Dependencies
       run: |
-        pip install -r .github/workflow/requirements.txt
+        pip install -r requirements.txt
 
     - name: run the app
       run: |
