@@ -9,17 +9,17 @@ jobs:
  
     steps:
 
-    - name: Show Current Dir
-      run: |
-        cd
+    # - name: Show Current Dir
+    #   run: |
+    #     cd
 
-    - name: See Folder Structure
-      run: |
-        tree
+    # - name: See Folder Structure
+    #   run: |
+    #     tree
         
     - name: Install Dependencies
       run: |
-        pip install -r requirements.txt
+        pip install -r .github/workflow/requirements.txt
 
     - name: run the app
       run: |
