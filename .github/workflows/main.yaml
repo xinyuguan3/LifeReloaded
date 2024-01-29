@@ -9,7 +9,11 @@ jobs:
  
     steps:
 
-    - name: find requirements.txt
+    - name: Show Current Dir
+      run: |
+        cd
+
+    - name: Find Requirements.txt
       run: |
         find . -regex '.*requirements.txt$'
         
