@@ -8,29 +8,17 @@ jobs:
     runs-on: ubuntu-latest
  
     steps:
-    # - name: checkout actions
-    # - uses: actions/checkout@v1
- 
-    # - name: Set up Python 3.7
-    #   uses: actions/setup-python@v1
-    #   with:
-    #     python-version: 3.7
-        
-    # - name: Update paper list
-    #   run: |
-    #     cd paper_infos
-    #     python generate_tables.py
+
+    - name: Install Dependencies
+      run: |
+        cd ../..
         
     - name: Install Dependencies
       run: |
-        pip install -r /LifeReloaded/requirements.txt
+        pip install -r requirements.txt
 
     - name: run the app
       run: |
         python app.py
-        
-    # - name: Push changes
-    #   uses: ad-m/github-push-action@master
-    #   with:
-    #     github_token: ${{ secrets.GITHUB_TOKEN }}
+
  
