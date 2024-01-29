@@ -169,7 +169,7 @@ class Game {
 
     generateOpening() {
         const textContainer = document.getElementById('opening');
-        const text = "欢迎来到《人生重启模拟器》，一个简约的世界，等待你来编织命运。在这里，每个选择都是重生的机会，每个对话都能开辟生活的新路径。用你的智慧探索无数可能，用你的决定定义未来。现在，深呼吸，按下“开始游戏”，让我们一起探索人生的无限可能吧！";
+        const text = "欢迎来到《人生重启模拟器》，一个简约的世界，等待你来编织命运。在这里，重塑你自己的生命。现在，深呼吸，按下“开始游戏”，让我们一起探索人生的无限可能吧！";
         const textDisplay = new TextDisplay(text, textContainer, 25);
         textDisplay.display(() => {
             DomUtils.showElement('#start-button', 'inline');
