@@ -21,9 +21,9 @@ jobs:
       with:
         python-version: '3.x'
 
-    - name: Create a requirements file
-      run: |
-        pip freeze > requirements.txt
+    # - name: Create a requirements file
+    #   run: |
+    #     pip freeze > requirements.txt
         
     - name: Install Dependencies
       run: |
