@@ -36,7 +36,7 @@ app.mount('/life-reload/static',
 
 @app.get('/life-reload/', response_class=HTMLResponse)
 async def game_root():
-    return templates.TemplateResponse('game.html', {'request': {}})
+    return templates.TemplateResponse('index.html', {'request': {}})
 
 
 @app.post('/life-reload/init/')
